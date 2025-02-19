@@ -1,9 +1,10 @@
 import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router";
+import ThemeButton from "./ThemeButton";
 
 function Navbar() {
   return (
-    <div className="navbar bg-neutral px-4 flex justify-between">
+    <div className="navbar bg-base-300 px-4 flex justify-between">
       <div className="flex items-center gap-2">
         <FaGithub />
         <Link to="/" className=" text-xl">
@@ -17,6 +18,7 @@ function Navbar() {
         <Link to="/about" className="btn  btn-ghost">
           about
         </Link>
+        <ThemeButton />
       </div>
     </div>
   );
