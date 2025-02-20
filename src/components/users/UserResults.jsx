@@ -12,7 +12,7 @@ function UserResults() {
 
   if (loading) {
     return (
-      <div className="h-full grid place-content-center text-2xl animate-pulse">
+      <div className="min-h-[70vh] grid place-content-center text-2xl animate-pulse">
         <span class="loader"></span>
       </div>
     );

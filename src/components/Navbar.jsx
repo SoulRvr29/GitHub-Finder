@@ -4,7 +4,7 @@ import ThemeButton from "./ThemeButton";
 
 function Navbar() {
   return (
-    <div className="navbar bg-base-300 px-4 flex justify-between">
+    <div className="navbar bg-base-300 px-4 flex justify-between shadow-lg">
       <div className="flex items-center gap-2">
         <FaGithub />
         <Link to="/" className=" text-xl">

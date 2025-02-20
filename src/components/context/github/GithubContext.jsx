@@ -9,9 +9,7 @@ export const GithubProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   const getUsers = async () => {
-    const response = await fetch(
-      `${import.meta.env.VITE_GITHUB_URL}/users?per_page=10`
-    );
+    const response = await fetch(`${GITHUB_URL}/users?per_page=10`);
     const data = await response.json();
     setUsers(data);
     setLoading(false);
