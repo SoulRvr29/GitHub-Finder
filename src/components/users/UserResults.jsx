@@ -13,7 +13,7 @@ function UserResults() {
   if (loading) {
     return (
       <div className="min-h-[70vh] grid place-content-center text-2xl animate-pulse">
-        <span class="loader"></span>
+        <span className="loader"></span>
       </div>
     );
   } else
