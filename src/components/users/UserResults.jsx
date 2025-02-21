@@ -3,10 +3,10 @@ import GithubContext from "../context/github/GithubContext";
 import UserItem from "./UserItem";
 
 function UserResults() {
-  const { users, loading, getUsers } = useContext(GithubContext);
+  const { users, loading, fetchUsers } = useContext(GithubContext);
   useEffect(() => {
     setTimeout(() => {
-      getUsers();
+      // fetchUsers();
     }, 1000);
   }, []);
 
