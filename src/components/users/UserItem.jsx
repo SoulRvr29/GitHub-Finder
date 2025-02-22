@@ -10,7 +10,7 @@ function UserItem({ user: { login, avatar_url } }) {
         <div>{login}</div>
         <Link
           className="opacity-50 hover:opacity-100 hover:text-accent"
-          to={`/users/${login}`}
+          to={`/user/${login}`}
         >
           Visit profile
         </Link>
