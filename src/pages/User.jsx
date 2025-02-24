@@ -2,17 +2,17 @@ import { useEffect, useContext } from "react";
 import GithubContext from "../components/context/github/GithubContext";
 import { useParams, Link } from "react-router";
 import { FaCodepen, FaStore, FaUserFriends, FaUsers } from "react-icons/fa";
+import RepoList from "../components/repos/RepoList";
 
 function User() {
-  const { getUser, user, loading } = useContext(GithubContext);
+  const { getUser, user, loading, getUserRepos, repos } =
+    useContext(GithubContext);
 
   const params = useParams();
 
-  console.log(user);
-
   useEffect(() => {
     getUser(params.login);
-    // getUserRepos(params.login);
+    getUserRepos(params.login);
   }, []);
 
   const {
@@ -60,7 +60,7 @@ function User() {
         </div>
 
         <div className="col-span-2">
-          <div className="mb-6">
+          <div className="mb-6 px-4">
             <h1 className="text-3xl card-title">
               {name}
               <div className="ml-2 mr-1 badge badge-success">{type}</div>
@@ -117,48 +117,49 @@ function User() {
       </div>
 
       <div className="w-full py-5 mb-6 rounded-lg shadow-md bg-base-100 stats">
-        <div className="grid grid-cols-1 md:grid-cols-3">
+        <div className="grid grid-cols-1 md:grid-cols-4">
           <div className="stat">
             <div className="stat-figure text-secondary">
-              <FaUsers className="text-3xl md:text-5xl" />
+              <FaUsers className="text-4xl md:text-5xl" />
             </div>
-            <div className="stat-title pr-5">Followers</div>
-            <div className="stat-value pr-5 text-3xl md:text-4xl">
+            <div className="stat-title text-sm pr-5">Followers</div>
+            <div className="stat-value pr-5 text-4xl md:text-2xl">
               {followers}
             </div>
           </div>
 
           <div className="stat">
             <div className="stat-figure text-secondary">
-              <FaUserFriends className="text-3xl md:text-5xl" />
+              <FaUserFriends className="text-4xl md:text-5xl" />
             </div>
-            <div className="stat-title pr-5">Following</div>
-            <div className="stat-value pr-5 text-3xl md:text-4xl">
+            <div className="stat-title text-sm pr-5">Following</div>
+            <div className="stat-value pr-5 text-4xl md:text-2xl">
               {following}
             </div>
           </div>
 
           <div className="stat">
             <div className="stat-figure text-secondary">
-              <FaCodepen className="text-3xl md:text-5xl" />
+              <FaCodepen className="text-4xl md:text-5xl" />
             </div>
-            <div className="stat-title pr-5">Public Repos</div>
-            <div className="stat-value pr-5 text-3xl md:text-4xl">
+            <div className="stat-title text-sm pr-5">Public Repos</div>
+            <div className="stat-value pr-5 text-4xl md:text-2xl">
               {public_repos}
             </div>
           </div>
 
           <div className="stat">
             <div className="stat-figure text-secondary">
-              <FaStore className="text-3xl md:text-5xl" />
+              <FaStore className="text-4xl md:text-5xl" />
             </div>
-            <div className="stat-title pr-5">Public Gists</div>
-            <div className="stat-value pr-5 text-3xl md:text-4xl">
+            <div className="stat-title text-sm pr-5">Public Gists</div>
+            <div className="stat-value pr-5 text-4xl md:text-2xl">
               {public_gists}
             </div>
           </div>
         </div>
       </div>
+      <RepoList repos={repos} />
     </div>
   );
 }
