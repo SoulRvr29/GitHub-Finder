@@ -81,7 +81,7 @@ function User() {
             </div>
           </div>
 
-          <div className="w-full rounded-lg shadow-md bg-base-100 stats">
+          <div className="w-full rounded-lg shadow-md bg-base-100 stats flex flex-col md:flex-row">
             {location && (
               <div className="stat">
                 <div className="stat-title text-md">Location</div>
