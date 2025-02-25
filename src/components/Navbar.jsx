@@ -7,7 +7,7 @@ function Navbar() {
     <div className="navbar bg-base-300 px-4 flex  justify-between shadow-lg">
       <div className="flex items-center gap-2">
         <FaGithub />
-        <Link to="/" className="md:text-xl">
+        <Link to="/" className="md:text-xl font-semibold">
           GitHub Finder
         </Link>
       </div>
