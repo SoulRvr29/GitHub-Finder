@@ -1,4 +1,11 @@
-import { FaEye, FaInfo, FaLink, FaStar, FaUtensils } from "react-icons/fa";
+import {
+  FaEye,
+  FaInfo,
+  FaLink,
+  FaStar,
+  FaUtensils,
+  FaCalendarAlt,
+} from "react-icons/fa";
 
 import PropTypes from "prop-types";
 
@@ -11,6 +18,7 @@ function RepoItem({ repo }) {
     open_issues,
     watchers_count,
     stargazers_count,
+    created_at,
   } = repo;
 
   return (
@@ -23,6 +31,13 @@ function RepoItem({ repo }) {
         </h3>
         <p className="mb-3">{description}</p>
         <div>
+          <div
+            title="created"
+            className="mr-2 mb-2 badge badge-outline badge-secondary badge-lg"
+          >
+            <FaCalendarAlt className="mr-2" />{" "}
+            {created_at && created_at.slice(0, 4)}
+          </div>
           <div title="watchers" className="mr-2 mb-2 badge badge-info badge-lg">
             <FaEye className="mr-2" /> {watchers_count}
           </div>

@@ -30,6 +30,7 @@ function User() {
     following,
     public_gists,
     public_repos,
+    created_at,
   } = user;
 
   return loading === true ? (
@@ -63,6 +64,9 @@ function User() {
           <div className="mb-6 px-4">
             <h1 className="text-3xl card-title">
               {name}
+              <div className="ml-2 mr-1 badge badge-secondary badge-outline text-nowrap">
+                since {created_at && created_at.slice(0, 4)}
+              </div>
               <div className="ml-2 mr-1 badge badge-success">{type}</div>
               {hireable && (
                 <div className="mx-1 badge badge-info">Hireable</div>
@@ -94,6 +98,20 @@ function User() {
                 <div className="text-lg stat-value">
                   <a href={blog} target="_blank" rel="noreferrer">
                     {blog}
+                  </a>
+                </div>
+              </div>
+            )}
+            {twitter_username && (
+              <div className="stat">
+                <div className="stat-title text-md">Twitter</div>
+                <div className="text-lg stat-value">
+                  <a
+                    href={`https://twitter.com/${twitter_username}`}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    {twitter_username}
                   </a>
                 </div>
               </div>

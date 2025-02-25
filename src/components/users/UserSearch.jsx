@@ -25,7 +25,6 @@ function UserSearch() {
   return (
     <div className="flex flex-col items-center">
       <form onSubmit={handleSubmit}>
-        <Alert />
         <div className="relative w-80">
           <input
             type="text"
@@ -38,6 +37,7 @@ function UserSearch() {
             OK
           </button>
         </div>
+        <Alert />
       </form>
       {users.length > 0 && (
         <button
